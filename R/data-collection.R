@@ -6,9 +6,9 @@ library(HMDHFDplus)
 library(keyring)
 
 ## Generate data ----
-CHLbirthsRR <- HMDHFDplus::readHFDweb(
+CHLbirthsRRbo <- HMDHFDplus::readHFDweb(
   CNTRY = "CHL",
-  item = "birthsRR",
+  item = "birthsRRbo",
   username = keyring::key_list("human-fertility-database")$username,
   password = keyring::key_get(
     service = "human-fertility-database",
@@ -17,10 +17,10 @@ CHLbirthsRR <- HMDHFDplus::readHFDweb(
 ) %>%
   dplyr::filter(Year == 1992) %>%
   dplyr::select(-Year)
-saveRDS(CHLbirthsRR, "data/CHLbirthsRR.rds")
-CHLasfrRR <- HMDHFDplus::readHFDweb(
+saveRDS(CHLbirthsRRbo, "data/CHLbirthsRRbo.rds")
+CHLasfrRRbo <- HMDHFDplus::readHFDweb(
   CNTRY = "CHL",
-  item = "asfrRR",
+  item = "asfrRRbo",
   username = keyring::key_list("human-fertility-database")$username,
   password = keyring::key_get(
     service = "human-fertility-database",
@@ -29,4 +29,4 @@ CHLasfrRR <- HMDHFDplus::readHFDweb(
 ) %>%
   dplyr::filter(Year == 1992) %>%
   dplyr::select(-Year)
-saveRDS(CHLbirthsRR, "data/CHLasfrRR.rds")
+saveRDS(CHLasfrRRbo, "data/CHLasfrRRbo.rds")

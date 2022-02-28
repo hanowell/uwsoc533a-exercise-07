@@ -17,14 +17,16 @@ pacman::p_load(dplyr, knitr, kableExtra, readr)
 ## Data collection {.unnumbered}
 
 ```{r}
-
+CHLasfrRR <- readRDS(url("https://github.com/hanowell/uwsoc533a-exercise-07/blob/main/data/CHLasfrRR.rds?raw=true"))
+CHLbirthsRR <- readRDS(url("https://github.com/hanowell/uwsoc533a-exercise-07/blob/main/data/CHLbirthsRR.rds?raw=true"))
 ```
 
 ## About the data {.unnumbered}
 
 **You've just loaded three data sets:**
 
-* **`CHLbirthsRR` gives you the number of births by age**
+* **`CHLasfrRRbo` gives the period age-specific fertility rate (`ASFR`) as well as the parity-specific ASFR (`ASFR[parity]`) by `Age` by one-year age group for Chile in 1992**
+* **`CHLbirthsRRbo` gives you the period number of births (`Total`) as well as the parity-specific number of births (`B[parity]`) by `Age` by one-year age group for Chile in 1992**
 
 ## Compute the Total Fertility Rate (TFR) from the data provided
 
@@ -33,7 +35,6 @@ pacman::p_load(dplyr, knitr, kableExtra, readr)
 ```{r}
 
 ```
-
 
 ## TFR vs. Total Marital Fertility Rate (TMFR)
 
@@ -53,3 +54,5 @@ pacman::p_load(dplyr, knitr, kableExtra, readr)
 
 
 ## TFR vs. crude birth rate (CBR)
+
+**Compare the TFR to the CBR and explain the difference between them with respect to the age structure of fertility in Chile in 1992. (1 point)**
