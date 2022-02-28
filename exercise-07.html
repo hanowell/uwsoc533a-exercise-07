@@ -256,38 +256,35 @@ if (!require(&quot;pacman&quot;)) install.packages(&quot;pacman&quot;)</code></p
 <pre class="r"><code># p_load function loads packages if installed, or install then loads otherwise
 pacman::p_load(dplyr, knitr, kableExtra, readr)</code></pre>
 </div>
-<div id="data-collection" class="section level1 unnumbered">
-<h1 class="unnumbered">Data collection</h1>
+<div id="chile-1992" class="section level1" number="1">
+<h1><span class="header-section-number">1</span> Chile 1992</h1>
+<div id="data-collection" class="section level2 unnumbered">
+<h2 class="unnumbered">Data collection</h2>
 <pre class="r"><code>CHLasfrRRbo &lt;- readRDS(url(&quot;https://github.com/hanowell/uwsoc533a-exercise-07/blob/main/data/CHLasfrRRbo.rds?raw=true&quot;))
 CHLbirthsRRbo &lt;- readRDS(url(&quot;https://github.com/hanowell/uwsoc533a-exercise-07/blob/main/data/CHLbirthsRRbo.rds?raw=true&quot;))</code></pre>
 </div>
-<div id="about-the-data" class="section level1 unnumbered">
-<h1 class="unnumbered">About the data</h1>
+<div id="about-the-data" class="section level2 unnumbered">
+<h2 class="unnumbered">About the data</h2>
 <p><strong>You’ve just loaded two data sets:</strong></p>
 <ul>
 <li><strong><code>CHLasfrRRbo</code> gives the period age-specific fertility rate (<code>ASFR</code>) as well as the parity-specific ASFR (<code>ASFR[parity]</code>) by <code>Age</code> by one-year age group for Chile in 1992</strong></li>
 <li><strong><code>CHLbirthsRRbo</code> gives you the period number of births (<code>Total</code>) as well as the parity-specific number of births (<code>B[parity]</code>) by <code>Age</code> by one-year age group for Chile in 1992</strong></li>
 </ul>
 </div>
-<div id="compute-the-total-fertility-rate-tfr-from-the-data-provided" class="section level1" number="1">
-<h1><span class="header-section-number">1</span> Compute the Total Fertility Rate (TFR) from the data provided</h1>
+<div id="compute-the-total-fertility-rate-tfr-from-the-data-provided" class="section level2" number="1.1">
+<h2><span class="header-section-number">1.1</span> Compute the Total Fertility Rate (TFR) from the data provided</h2>
 <p><strong>1 point</strong></p>
 </div>
-<div id="tfr-vs.-total-marital-fertility-rate-tmfr" class="section level1" number="2">
-<h1><span class="header-section-number">2</span> TFR vs. Total Marital Fertility Rate (TMFR)</h1>
-<p><strong>With reference to their formal definitions, explain why the total marital fertility rate (TMFR) is assumed to be greater than or equal to the TFR in Bongaarts’ proximate determinants framework, and what this implies for the numerical bounds of the coefficient of sexual union. (1 point)</strong></p>
-<p><strong>Answer below:</strong></p>
-</div>
-<div id="compute-the-crude-birth-rate-cbr-from-the-data-provided" class="section level1" number="3">
-<h1><span class="header-section-number">3</span> Compute the crude birth rate (CBR) from the data provided</h1>
+<div id="compute-the-crude-birth-rate-cbr-from-the-data-provided" class="section level2" number="1.2">
+<h2><span class="header-section-number">1.2</span> Compute the crude birth rate (CBR) from the data provided</h2>
 <p><strong>1 point</strong></p>
 </div>
-<div id="tfr-vs.-crude-birth-rate-cbr" class="section level1" number="4">
-<h1><span class="header-section-number">4</span> TFR vs. crude birth rate (CBR)</h1>
+<div id="tfr-vs.-crude-birth-rate-cbr" class="section level2" number="1.3">
+<h2><span class="header-section-number">1.3</span> TFR vs. crude birth rate (CBR)</h2>
 <p><strong>Compare the TFR to the CBR and explain the difference between them with respect to the age structure of fertility in Chile in 1992. (1 point)</strong></p>
 </div>
-<div id="compute-the-period-first-birth-table" class="section level1" number="5">
-<h1><span class="header-section-number">5</span> Compute the period first birth table</h1>
+<div id="compute-the-period-first-birth-table" class="section level2" number="1.4">
+<h2><span class="header-section-number">1.4</span> Compute the period first birth table</h2>
 <p><strong>Hints:</strong></p>
 <ul>
 <li><strong>Someone with a uterus and ovaries can only experience their first live birth once in their life, so we’ve learned how to construct a table like this in previous weeks.</strong></li>
@@ -295,8 +292,26 @@ CHLbirthsRRbo &lt;- readRDS(url(&quot;https://github.com/hanowell/uwsoc533a-exer
 </ul>
 <p><strong>2 points (1 for getting steps basically right, 1 for accurate results)</strong></p>
 </div>
-<div id="parity-from-the-childs-vs.-mothers-perspective" class="section level1" number="6">
-<h1><span class="header-section-number">6</span> Parity from the child’s vs. mother’s perspective</h1>
+</div>
+<div id="parity-from-the-childs-vs.-mothers-perspective" class="section level1" number="2">
+<h1><span class="header-section-number">2</span> Parity from the child’s vs. mother’s perspective</h1>
+<div id="data-collection-1" class="section level2 unnumbered">
+<h2 class="unnumbered">Data collection</h2>
+<pre class="r"><code>parity_data &lt;- readRDS(url(&quot;https://github.com/hanowell/uwsoc533a-exercise-07/blob/main/data/parity_data.rds?raw=true&quot;))</code></pre>
+</div>
+<div id="about-the-data-1" class="section level2 unnumbered">
+<h2 class="unnumbered">About the data</h2>
+<p><strong>You’ve just loaded a data set that gives a row per uterus-having individual in a simulated cohort along with their simulated completed <code>parity</code>.</strong></p>
+</div>
+<div id="compute-the-distortion-of-completed-parity" class="section level2" number="2.1">
+<h2><span class="header-section-number">2.1</span> Compute the distortion of completed parity</h2>
+<p><strong>Using this data, compute the difference between parity as estimated from a survey of completed parity targeting biological mothers vs. their offspring. (1 point)</strong></p>
+</div>
+</div>
+<div id="tfr-vs.-total-marital-fertility-rate-tmfr" class="section level1" number="3">
+<h1><span class="header-section-number">3</span> TFR vs. Total Marital Fertility Rate (TMFR)</h1>
+<p><strong>With reference to their formal definitions, explain why the total marital fertility rate (TMFR) is assumed to be greater than or equal to the TFR in Bongaarts’ proximate determinants framework, and what this implies for the numerical bounds of the coefficient of sexual union. (1 point)</strong></p>
+<p><strong>Answer below:</strong></p>
 </div>
 
 

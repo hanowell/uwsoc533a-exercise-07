@@ -19,21 +19,23 @@ if (!require("pacman")) install.packages("pacman")
 pacman::p_load(dplyr, knitr, kableExtra, readr)
 ```
 
-# Data collection {.unnumbered}
+# Chile 1992
+
+## Data collection {.unnumbered}
 
 ```{r}
 CHLasfrRRbo <- readRDS(url("https://github.com/hanowell/uwsoc533a-exercise-07/blob/main/data/CHLasfrRRbo.rds?raw=true"))
 CHLbirthsRRbo <- readRDS(url("https://github.com/hanowell/uwsoc533a-exercise-07/blob/main/data/CHLbirthsRRbo.rds?raw=true"))
 ```
 
-# About the data {.unnumbered}
+## About the data {.unnumbered}
 
 **You've just loaded two data sets:**
 
 * **`CHLasfrRRbo` gives the period age-specific fertility rate (`ASFR`) as well as the parity-specific ASFR (`ASFR[parity]`) by `Age` by one-year age group for Chile in 1992**
 * **`CHLbirthsRRbo` gives you the period number of births (`Total`) as well as the parity-specific number of births (`B[parity]`) by `Age` by one-year age group for Chile in 1992**
 
-# Compute the Total Fertility Rate (TFR) from the data provided
+## Compute the Total Fertility Rate (TFR) from the data provided
 
 **1 point**
 
@@ -41,15 +43,7 @@ CHLbirthsRRbo <- readRDS(url("https://github.com/hanowell/uwsoc533a-exercise-07/
 
 ```
 
-# TFR vs. Total Marital Fertility Rate (TMFR)
-
-**With reference to their formal definitions, explain why the total marital fertility rate (TMFR) is assumed to be greater than or equal to the TFR in Bongaarts' proximate determinants framework, and what this implies for the numerical bounds of the coefficient of sexual union. (1 point)**
-
-**Answer below:**
-
-
-
-# Compute the crude birth rate (CBR) from the data provided
+## Compute the crude birth rate (CBR) from the data provided
 
 **1 point**
 
@@ -58,11 +52,11 @@ CHLbirthsRRbo <- readRDS(url("https://github.com/hanowell/uwsoc533a-exercise-07/
 ```
 
 
-# TFR vs. crude birth rate (CBR)
+## TFR vs. crude birth rate (CBR)
 
 **Compare the TFR to the CBR and explain the difference between them with respect to the age structure of fertility in Chile in 1992. (1 point)**
 
-# Compute the period first birth table
+## Compute the period first birth table
 
 **Hints:**
 
@@ -76,4 +70,29 @@ CHLbirthsRRbo <- readRDS(url("https://github.com/hanowell/uwsoc533a-exercise-07/
 ```
 
 # Parity from the child's vs. mother's perspective
+
+## Data collection {.unnumbered}
+
+```{r}
+parity_data <- readRDS(url("https://github.com/hanowell/uwsoc533a-exercise-07/blob/main/data/parity_data.rds?raw=true"))
+```
+
+## About the data {.unnumbered}
+
+**You've just loaded a data set that gives a row per uterus-having individual in a simulated cohort along with their simulated completed `parity`.**
+
+## Compute the distortion of completed parity
+
+**Using this data, compute the difference between parity as estimated from a survey of completed parity targeting biological mothers vs. their offspring. (1 point)**
+
+```{r}
+
+```
+
+# TFR vs. Total Marital Fertility Rate (TMFR)
+
+**With reference to their formal definitions, explain why the total marital fertility rate (TMFR) is assumed to be greater than or equal to the TFR in Bongaarts' proximate determinants framework, and what this implies for the numerical bounds of the coefficient of sexual union. (1 point)**
+
+**Answer below:**
+
 
